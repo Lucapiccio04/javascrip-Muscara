@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <script type="text/javascript">
+            function controlla(form) {
+                if (form.r2.checked)
+                    var risposta ="Risposta esatta! bene!";
+                else
+                    var risposta ="Risposta sbagliata! Riprova!";
+                document.getElementById("esito").innerHTML=risposta;
+            }
+            function cancella(){
+                document.getElementById("esito").innerHTML=" ";
+            }
+        </script>
+    </head>
+    <body>
+        <form id="domanda">
+            <fieldset >
+                <legend>Come si calcola l'area del triamgolo?</legend>
+                <p><input type="radio" name="risp" id="r1">base x altezza</p>
+                <p><input type="radio" name="risp" id="r2">base x altezza : 2</p>
+                <p><input type="radio" name="risp" id="r3">base + altezza</p>
+                <p><input type="radio" name="risp" id="r4">base + altezza x 2</p>
+            </fieldset>
+            <p><input type="button" id="invia" value="invia"
+                 onclick="controlla(this.form)">
+                <input type="reset" id="annulla" value="annulla"
+                 onclick="cancella(this.form)"></p>
+                <p id="esito"></p>
+                
+        </form>
+    </body>
+</html>
